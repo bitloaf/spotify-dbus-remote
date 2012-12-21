@@ -43,7 +43,7 @@ case "$1" in
 esac
 
 # send to dbus
-CMD="dbus-send --print-reply --dest=${DESTINATION} ${COMMAND}";
+CMD="dbus-send --print-reply --reply-timeout=5000 --type=method_call --dest=${DESTINATION} ${COMMAND}";
 echo $CMD;
 eval $CMD;
 
