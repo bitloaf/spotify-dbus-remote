@@ -12,8 +12,9 @@ function usage() {
 }
 
 # count arguments
-if [[ $# != 1 ]];
+if [[ $# -gt 2 || $# -lt 1 ]];
 then
+    echo >&2 "illegal number of arguments"; 
 	usage;
 	exit 1;
 fi
@@ -38,7 +39,11 @@ case "$1" in
 	previous | prev)
         COMMAND+="Previous";
 	;;
-	*) usage
+    open)
+        COMMAND+="OpenUri string:$2";
+    ;;
+	*)
+        usage;
 	;;
 esac
 
