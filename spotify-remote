@@ -20,17 +20,23 @@ fi
 
 # input command
 case "$1" in
-	play) COMMAND+=Play
+	play)
+        COMMAND+="Play";
 	;;
-	pause) COMMAND+=Pause
+	pause)
+        COMMAND+="Pause";
 	;;
-	playpause) COMMAND+=PlayPause
+	playpause)
+        COMMAND+="PlayPause";
 	;;
-	stop) COMMAND+=Stop
+	stop)
+        COMMAND+="Stop";
 	;;
-	next) COMMAND+=Next
+	next)
+        COMMAND+="Next";
 	;;
-	previous | prev) COMMAND+=Previous
+	previous | prev)
+        COMMAND+="Previous";
 	;;
 	*) usage
 	;;
