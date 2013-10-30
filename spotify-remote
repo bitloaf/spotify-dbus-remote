@@ -8,7 +8,8 @@ COMMAND="/org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."
 
 # usage
 function usage() {
-    echo "usage: $(basename $0) [command]";
+    echo -e "usage: $(basename $0) [command]\n" \
+        "type $(basename $0) help for more info";
 }
 
 # count arguments
