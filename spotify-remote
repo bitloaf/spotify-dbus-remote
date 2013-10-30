@@ -39,6 +39,17 @@ case "$1" in
 	previous | prev)
         COMMAND+="Previous";
 	;;
+    seek)
+        # exits if second argument does not match pattern
+        echo $2 | grep -q "^[-\+]*[0-9]\+$" || {
+            echo >&2 "invalid argument for seek";
+            usage;
+            exit 1;
+        }
+
+        USEC=${2};
+        COMMAND+="Seek int64:$USEC";
+    ;;
     open)
         COMMAND+="OpenUri string:$2";
     ;;
